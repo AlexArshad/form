@@ -1,0 +1,123 @@
+{% extends "front/basic.html" %}
+
+<!------ Include the above in your HEAD tag ---------->
+{% block content %}
+
+<div class="container">    
+            
+    <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Login</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/accounts/login/">Login</a></div>
+            </div>  
+            <div class="panel-body" >
+                <form method="GET" action="/results/">{% csrf_token %}
+                    <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                            
+
+                 <form   class="form-horizontal" method="post" >
+                        <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                        
+                        <div id="div_id_firstname" class="form-group required">
+                            <label for="id_firstname" class="control-label col-md-4  requiredField">First_Name<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                               <!-- <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="firstname" placeholder="Enter your First_Name" style="margin-bottom: 10px" type="text">--><textarea name='textarea' cols=40 rows=1.5></textarea>
+                            </div>
+                        </div>
+                        <div id="div_id_lastname" class="form-group required">
+                            <label for="id_lastname" class="control-label col-md-4  requiredField">Last_Name<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                               <!-- <input class="input-md  textinput textInput form-control" id="id_username" maxlength="30" name="lastname" placeholder="Enter your Last_Name" style="margin-bottom: 10px" type="text" />--><textarea name='textarea1' cols=40 rows=1.5></textarea>
+                            </div>
+                        </div>
+                       <!---- <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField"> Email<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md emailinput form-control" id="id_email" name="email" placeholder="Your current email address" style="margin-bottom: 10px" type="email" />
+                            </div>     
+                        </div>
+                        <div id="div_id_password" class="form-group required">
+                            <label for="id_password" class="control-label col-md-4  requiredField">Password<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_password1" name="password" placeholder="Enter password" style="margin-bottom: 10px" type="password" />
+                            </div>
+                        </div>
+                        <div id="div_id_state" class="form-group required">
+                             <label for="id_state" class="control-label col-md-4  requiredField">State<span class="asteriskField">*</span> </label>
+                             <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" id="id_state" name="state" placeholder="Enter Your State Name" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_city" class="form-group required"> 
+                            <label for="id_city" class="control-label col-md-4  requiredField">City<span class="asteriskField">*</span> </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" id="id_city" name="city" placeholder="Enter Your City Name" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_regno" class="form-group required"> 
+                            <label for="id_regno" class="control-label col-md-4  requiredField">Registration No.<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" id="id_registration" name="registration" placeholder="Enter Your Registration Number Name" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div> 
+                        <div id="div_id_class" class="form-group required">
+                            <label for="id_class" class="control-label col-md-4  requiredField"> Class<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" id="id_class" name="class1" placeholder="skills class" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div> 
+                        <div id="div_id_Section" class="form-group required">
+                             <label for="id_Section" class="control-label col-md-4  requiredField">Section<span class="asteriskField">*</span> </label>
+                             <div class="controls col-md-8 ">
+                                 <input class="input-md textinput textInput form-control" id="id_Section" name="Section" placeholder="provide your Section" style="margin-bottom: 10px" type="text" />
+                            </div> 
+                        </div> 
+                        <div id="div_id_date_of_birth" class="form-group required">
+                            <label for="id_date_of_birth" class="control-label col-md-4  requiredField">Date Of Birth<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" id="id_date_of_birth" name="date_of_birth" placeholder="Enter Your Date Of Birth" style="margin-bottom: 10px" type="text" />
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <div class="controls col-md-offset-4 col-md-8 ">
+                                <div id="div_id_terms" class="checkbox required">
+                                    <label for="id_terms" class=" requiredField">
+                                         <input class="input-ms checkboxinput" id="id_terms" name="terms" style="margin-bottom: 10px" type="checkbox" />
+                                         Agree with the terms and conditions
+                                    </label>
+                                </div> 
+                                    
+                            </div>
+                        </div> --> 
+                        <div class="form-group"> 
+                            <div class="aab controls col-md-4 "></div>
+                            <div class="controls col-md-8 ">
+                                <input type="submit" name="Signup" value="login" class="btn btn-primary btn btn-info" id="submit-id-signup" />
+
+                            </div>
+                        </div> 
+                      
+                    </form>
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+    
+
+
+
+
+
+</div>            
+{% endblock %}
+
+  <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

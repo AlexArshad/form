@@ -1,0 +1,29 @@
+ {% extends 'back/index.html' %}
+{% block content%}
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+         {% if marks_data%}
+          {% for list in marks_data %}  
+          <tr>
+            <td>{{ list.id }}</td>
+            <td>{{ list.username }}</td>
+            <td>{{ list.email }}</td>
+            <td>{{ list.password }}</td>
+            
+          </tr>
+           {% endfor %} 
+          {% endif %} 
+        </tbody>
+    </table>	
+ </div>
+{% endblock %}
